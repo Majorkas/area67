@@ -140,6 +140,10 @@ a {
   color: #0d0d0d;
 }
 
+.nav .btn-primary {
+  color: #000000;
+}
+
 .btn-primary:hover {
   background: #dedede;
 }
