@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area 67 | Barber Shop</title>
+  <meta
+    name="description"
+    content="Area 67 is a modern barber shop delivering sharp cuts, clean fades, and classic grooming in a bold black and white style."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@300;400;600;700&family=UnifrakturCook:wght@700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#home">
+        <span class="brand-area">Area</span>
+        <span class="mark-67">67</span>
+        <span class="brand-sub">Barbers</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit</a>
+        <a class="btn btn-primary" href="#book">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow" data-reveal="1">Precision Grooming</p>
+          <h1 data-reveal="2">CUT SHARP.<br>STAY LEGENDARY.</h1>
+          <p data-reveal="3">
+            Area 67 is your local destination for clean fades, old-school razor work,
+            and modern style. Every appointment is tailored so you leave with confidence.
+          </p>
+          <div class="hero-actions" data-reveal="4">
+            <a class="btn btn-primary" href="#book">Reserve a Chair</a>
+            <a class="btn btn-ghost" href="#services">See Services</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Today at Area 67">
+          <div class="line"><span>Address</span><strong>Area67 Barbershop, Wentworth Place, Wicklow, Ireland A67 XT71</strong></div>
+          <div class="line"><span>Mon - Thu</span><strong>9:00 AM - 7:00 PM</strong></div>
+          <div class="line"><span>Fri</span><strong>9:00 AM - 8:00 PM</strong></div>
+          <div class="line"><span>Sat</span><strong>8:00 AM - 6:00 PM</strong></div>
+          <div class="line"><span>Sun</span><strong>10:00 AM - 4:00 PM</strong></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>
+            Choose your barber and see live pricing for every service.
+            Each team member has their own rate card.
+          </p>
+        </div>
+
+        <div class="services-shell">
+          <div class="barber-tabs" role="tablist" aria-label="Select Barber">
+            <button class="barber-tab is-active" type="button" role="tab" aria-selected="true" tabindex="0" data-barber="mark">Mark</button>
+            <button class="barber-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-barber="ronan">Ronan</button>
+            <button class="barber-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-barber="dean">Dean</button>
+          </div>
+          <p class="services-note">Tap a barber tab to switch rate cards. Prices update as cards flip.</p>
+
+          <div class="services-grid" role="tabpanel" aria-label="Service Prices">
+          <article class="service">
+            <h3>Skin Fade</h3>
+            <p>
+              Precision fade with clean detail around the hairline and neckline.
+            </p>
+            <p class="price">45 mins | <span class="service-price" data-service="skinFade">&euro;25</span></p>
+          </article>
+          <article class="service">
+            <h3>Skin Fade + Beard</h3>
+            <p>
+              Full skin fade and beard shape-up for a complete polished finish.
+            </p>
+            <p class="price">55 mins | <span class="service-price" data-service="skinFadeBeard">&euro;29</span></p>
+          </article>
+          <article class="service">
+            <h3>Student Skin Fade</h3>
+            <p>
+              Discounted skin fade for students with valid student ID.
+            </p>
+            <p class="price">45 mins | <span class="service-price" data-service="studentSkinFade">&euro;23</span></p>
+          </article>
+          <article class="service">
+            <h3>Kids Cut</h3>
+            <p>
+              Clean, age-appropriate haircut for children in a relaxed chair-time.
+            </p>
+            <p class="price">30 mins | <span class="service-price" data-service="kidsCut">&euro;20</span></p>
+          </article>
+          <article class="service">
+            <h3>Father &amp; Son</h3>
+            <p>
+              Back-to-back grooming session for father and son with matching quality.
+            </p>
+            <p class="price">70 mins | <span class="service-price" data-service="fatherSon">&euro;40</span></p>
+          </article>
+          <article class="service">
+            <h3>Beard Only</h3>
+            <p>
+              Beard trim, line-up, and tidy finish without a haircut.
+            </p>
+            <p class="price">20 mins | <span class="service-price" data-service="beardOnly">&euro;15</span></p>
+          </article>
+          <article class="service">
+            <h3>Out of Hours</h3>
+            <p>
+              Appointment outside regular shop hours for extra flexibility.
+            </p>
+            <p class="price">45 mins | <span class="service-price" data-service="outOfHours">&euro;35</span></p>
+          </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap split">
+        <article class="panel">
+          <h2>Who We Are</h2>
+          <p>
+            Area 67 blends classic barber tradition with a bold, street-aware style.
+            Our team focuses on consistency, craftsmanship, and a relaxed atmosphere.
+          </p>
+          <p>
+            Whether you want a clean professional look or a statement cut, we craft
+            every detail around your face shape, hair texture, and routine.
+          </p>
+        </article>
+
+        <article class="panel" id="visit">
+          <h2>Hours + Location</h2>
+          <p>Walk in or pre-book online. First coffee is on us.</p>
+          <p>Area67 Barbershop, Wentworth Place, Wicklow, Ireland A67 XT71</p>
+          <div class="hours" role="group" aria-label="Opening Hours">
+            <div class="hours-row"><span>Mon - Thu</span><span>9:00 AM - 7:00 PM</span></div>
+            <div class="hours-row"><span>Fri</span><span>9:00 AM - 8:00 PM</span></div>
+            <div class="hours-row"><span>Sat</span><span>8:00 AM - 6:00 PM</span></div>
+            <div class="hours-row"><span>Sun</span><span>10:00 AM - 4:00 PM</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta" id="book">
+      <div class="wrap">
+        <div class="cta-box">
+          <h2>Book Your Appointment</h2>
+          <p>Use the link below to book your appointment in seconds.</p>
+
+          <div class="booking-actions">
+            <a
+              class="btn btn-primary"
+              href="https://area67barbershop.resurva.com/setup/schedule?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnultvOgio1y6CcfB5xbN4PMm_neVGWay00D0aU-7tb61X-ncNCI0bT1IBFow_aem_NWXIrEiBk0nKZkxMyjL7mQ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Book Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-content">
+      <p class="footer-brand">Area <span class="mark-67 mark-67-footer">67</span> Barbershop | Area67 Barbershop, Wentworth Place, Wicklow, Ireland A67 XT71</p>
+      <p class="footer-contact">Email: <a href="mailto:hello@area67.ie">hello@area67.ie</a></p>
+      <nav class="footer-legal-links" aria-label="Legal Links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="terms.html">Booking Terms</a>
+        <button type="button" class="footer-link-button" id="manage-cookies">Cookie Settings</button>
+      </nav>
+      <p class="footer-small">All prices are shown in EUR. Final service pricing depends on selected barber and appointment type.</p>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookie-banner" hidden>
+    <div class="cookie-banner-inner" role="dialog" aria-live="polite" aria-label="Cookie Preferences">
+      <p>We use essential cookies to run this site. Optional analytics cookies help us improve performance.</p>
+      <div class="cookie-banner-actions">
+        <button type="button" class="btn btn-primary" id="cookie-accept-all">Accept All</button>
+        <button type="button" class="btn btn-ghost" id="cookie-essential-only">Essential Only</button>
+        <a href="cookie-policy.html">Read Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const pricingByBarber = {
+      mark: {
+        skinFade: 25,
+        skinFadeBeard: 29,
+        studentSkinFade: 23,
+        kidsCut: 20,
+        fatherSon: 40,
+        beardOnly: 15,
+        outOfHours: 35
+      },
+      ronan: {
+        skinFade: 27,
+        skinFadeBeard: 31,
+        studentSkinFade: 24,
+        kidsCut: 21,
+        fatherSon: 43,
+        beardOnly: 16,
+        outOfHours: 37
+      },
+      dean: {
+        skinFade: 30,
+        skinFadeBeard: 34,
+        studentSkinFade: 26,
+        kidsCut: 22,
+        fatherSon: 46,
+        beardOnly: 17,
+        outOfHours: 38
+      }
+    };
+
+    const barberTabs = document.querySelectorAll(".barber-tab");
+    const servicePrices = document.querySelectorAll(".service-price");
+    const servicesGrid = document.querySelector(".services-grid");
+    let priceUpdateTimer;
+    let flipCleanupTimer;
+    let activeBarber = "mark";
+
+    function updateServicePrices(barberKey) {
+      const barberPrices = pricingByBarber[barberKey];
+      if (!barberPrices) {
+        return;
+      }
+
+      servicePrices.forEach((priceEl) => {
+        const serviceKey = priceEl.dataset.service;
+        const nextPrice = barberPrices[serviceKey];
+        if (typeof nextPrice === "number") {
+          priceEl.innerHTML = "&euro;" + nextPrice;
+        }
+      });
+    }
+
+    function animateServicePriceChange(barberKey) {
+      if (!servicesGrid) {
+        updateServicePrices(barberKey);
+        return;
+      }
+
+      servicesGrid.classList.remove("is-flipping");
+      void servicesGrid.offsetWidth;
+      servicesGrid.classList.add("is-flipping");
+
+      clearTimeout(priceUpdateTimer);
+      clearTimeout(flipCleanupTimer);
+
+      priceUpdateTimer = setTimeout(() => {
+        updateServicePrices(barberKey);
+      }, 260);
+
+      flipCleanupTimer = setTimeout(() => {
+        servicesGrid.classList.remove("is-flipping");
+      }, 900);
+    }
+
+    function setActiveBarber(barberKey) {
+      activeBarber = barberKey;
+      barberTabs.forEach((tab) => {
+        const isSelected = tab.dataset.barber === barberKey;
+        tab.classList.toggle("is-active", isSelected);
+        tab.setAttribute("aria-selected", String(isSelected));
+        tab.tabIndex = isSelected ? 0 : -1;
+      });
+    }
+
+    barberTabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        const barberKey = tab.dataset.barber;
+        if (!barberKey || barberKey === activeBarber) {
+          return;
+        }
+        setActiveBarber(barberKey);
+        animateServicePriceChange(barberKey);
+      });
+
+      tab.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") {
+          return;
+        }
+
+        event.preventDefault();
+        const nextIndex =
+          event.key === "ArrowRight"
+            ? (index + 1) % barberTabs.length
+            : (index - 1 + barberTabs.length) % barberTabs.length;
+        const nextTab = barberTabs[nextIndex];
+        nextTab.focus();
+
+        const barberKey = nextTab.dataset.barber;
+        if (!barberKey || barberKey === activeBarber) {
+          return;
+        }
+        setActiveBarber(barberKey);
+        animateServicePriceChange(barberKey);
+      });
+    });
+
+    setActiveBarber(activeBarber);
+    updateServicePrices(activeBarber);
+
+    const cookieBanner = document.getElementById("cookie-banner");
+    const cookieAcceptButton = document.getElementById("cookie-accept-all");
+    const cookieEssentialButton = document.getElementById("cookie-essential-only");
+    const manageCookiesButton = document.getElementById("manage-cookies");
+    const consentStorageKey = "area67_cookie_consent";
+
+    function setCookieConsent(value) {
+      localStorage.setItem(consentStorageKey, value);
+      cookieBanner.hidden = true;
+      window.area67CookieConsent = value;
+    }
+
+    function showCookieBanner() {
+      if (!cookieBanner) {
+        return;
+      }
+      cookieBanner.hidden = false;
+    }
+
+    function initializeCookieConsent() {
+      const storedConsent = localStorage.getItem(consentStorageKey);
+      if (!storedConsent) {
+        showCookieBanner();
+        return;
+      }
+      window.area67CookieConsent = storedConsent;
+    }
+
+    if (cookieAcceptButton) {
+      cookieAcceptButton.addEventListener("click", () => {
+        setCookieConsent("all");
+      });
+    }
+
+    if (cookieEssentialButton) {
+      cookieEssentialButton.addEventListener("click", () => {
+        setCookieConsent("essential");
+      });
+    }
+
+    if (manageCookiesButton) {
+      manageCookiesButton.addEventListener("click", () => {
+        showCookieBanner();
+      });
+    }
+
+    initializeCookieConsent();
+  </script>
+</body>
+</html>
