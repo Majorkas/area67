@@ -24,7 +24,19 @@
         <span class="mark-67">67</span>
         <span class="brand-sub">Barbers</span>
       </a>
-      <nav class="nav" aria-label="Primary">
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav" id="primary-nav" aria-label="Primary">
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#visit">Visit</a>
@@ -42,11 +54,11 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow" data-reveal="1">Precision Grooming</p>
-          <h1 data-reveal="2">CUT SHARP.<br>STAY LEGENDARY.</h1>
+          <p class="eyebrow" data-reveal="1">From Humble Beginnings to a Thriving Business</p>
+          <h1 data-reveal="2">BUILT FROM PASSION.<br>DEFINED BY CRAFT.</h1>
           <p data-reveal="3">
-            Area 67 is your local destination for clean fades, old-school razor work,
-            and modern style. Every appointment is tailored so you leave with confidence.
+            Since first picking up the clippers in 2016, Mark Quinn has built Area67 into more
+            than a barbershop. It is a Wicklow community built on hard work, culture, and sharp style.
           </p>
           <div class="hero-actions" data-reveal="4">
             <a class="btn btn-primary" href="#book">Reserve a Chair</a>
@@ -142,12 +154,24 @@
         <article class="panel">
           <h2>Who We Are</h2>
           <p>
-            Area 67 blends classic barber tradition with a bold, street-aware style.
-            Our team focuses on consistency, craftsmanship, and a relaxed atmosphere.
+            Mark Quinn, owner of Area67 Barbershop, picked up his first set of clippers in 2016,
+            driven by passion and a clear vision. What started as a dream became a journey of
+            dedication, long hours, and mastering the craft of barbering. Every cut, every client,
+            and every lesson learned shaped the path forward.
           </p>
           <p>
-            Whether you want a clean professional look or a statement cut, we craft
-            every detail around your face shape, hair texture, and routine.
+            Quinn's Cuts might not have reached the success Mark wanted, but the mistakes made
+            along the way became vital when building AREA67 into what it is today.
+          </p>
+          <p>
+            Fast forward to 2023 and Area67 was born. Not just a barbershop, but a community.
+            A place where style meets culture. Mark's vision became reality, transforming how
+            people experience a haircut.
+          </p>
+          <p>
+            Now it is <span id="current-year">2026</span>. Area67 is more than a business; it is a movement. A testament to
+            hard work, perseverance, and believing in your dreams. From day one to today and
+            far beyond, this is only the beginning.
           </p>
         </article>
 
@@ -218,31 +242,42 @@
         kidsCut: 20,
         fatherSon: 40,
         beardOnly: 15,
-        outOfHours: 35
+        outOfHours: 40
       },
       ronan: {
-        skinFade: 27,
-        skinFadeBeard: 31,
-        studentSkinFade: 24,
-        kidsCut: 21,
-        fatherSon: 43,
-        beardOnly: 16,
-        outOfHours: 37
+        skinFade: 25,
+        skinFadeBeard: 30,
+        studentSkinFade: 20,
+        kidsCut: 20,
+        fatherSon: 40,
+        beardOnly: 15,
+        outOfHours: 40
       },
       dean: {
-        skinFade: 30,
-        skinFadeBeard: 34,
-        studentSkinFade: 26,
-        kidsCut: 22,
-        fatherSon: 46,
-        beardOnly: 17,
-        outOfHours: 38
+        skinFade: 23,
+        skinFadeBeard: 25,
+        studentSkinFade: 20,
+        kidsCut: 20,
+        fatherSon: 40,
+        beardOnly: 15,
+        outOfHours: 40
       }
     };
 
     const barberTabs = document.querySelectorAll(".barber-tab");
     const servicePrices = document.querySelectorAll(".service-price");
     const servicesGrid = document.querySelector(".services-grid");
+    const servicesShell = document.querySelector(".services-shell");
+    const barberBackgroundByKey = {
+      mark: "images/mark.JPG",
+      ronan: "images/ronan.JPG",
+      dean: "images/dean.JPG"
+    };
+    const barberBackgroundPositionByKey = {
+      mark: "center 50%",
+      ronan: "center 40%",
+      dean: "center 40%"
+    };
     let priceUpdateTimer;
     let flipCleanupTimer;
     let activeBarber = "mark";
@@ -292,6 +327,12 @@
         tab.setAttribute("aria-selected", String(isSelected));
         tab.tabIndex = isSelected ? 0 : -1;
       });
+
+      const backgroundImage = barberBackgroundByKey[barberKey];
+      if (servicesShell && backgroundImage) {
+        servicesShell.style.setProperty("--barber-image", `url('${backgroundImage}')`);
+        servicesShell.style.setProperty("--barber-position", barberBackgroundPositionByKey[barberKey] || "center 50%");
+      }
     }
 
     barberTabs.forEach((tab, index) => {
@@ -334,6 +375,13 @@
     const cookieEssentialButton = document.getElementById("cookie-essential-only");
     const manageCookiesButton = document.getElementById("manage-cookies");
     const consentStorageKey = "area67_cookie_consent";
+    const currentYearEl = document.getElementById("current-year");
+    const menuToggle = document.getElementById("menu-toggle");
+    const primaryNav = document.getElementById("primary-nav");
+
+    if (currentYearEl) {
+      currentYearEl.textContent = String(new Date().getFullYear());
+    }
 
     function setCookieConsent(value) {
       localStorage.setItem(consentStorageKey, value);
@@ -376,6 +424,34 @@
     }
 
     initializeCookieConsent();
+
+    function closeMobileNav() {
+      if (!primaryNav || !menuToggle) {
+        return;
+      }
+      primaryNav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+
+    if (menuToggle && primaryNav) {
+      menuToggle.addEventListener("click", () => {
+        const nextExpanded = menuToggle.getAttribute("aria-expanded") !== "true";
+        menuToggle.setAttribute("aria-expanded", String(nextExpanded));
+        primaryNav.classList.toggle("is-open", nextExpanded);
+      });
+
+      primaryNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          closeMobileNav();
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 950) {
+          closeMobileNav();
+        }
+      });
+    }
   </script>
 </body>
 </html>
